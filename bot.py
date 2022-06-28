@@ -13,13 +13,13 @@ BOT_TOKEN = environ.get('BOT_TOKEN')
 def start(update, context):
     keyboard = [
        [
-            InlineKeyboardButton("How to use me", url='https://telegra.ph/How-to-use-me-10-29'),
+            InlineKeyboardButton("Sign up", url='https://tiny.one/GPlinks'),
        ]
     ]
 
     reply_markup = InlineKeyboardMarkup(keyboard)
 
-    update.message.reply_text(f'Hi! {update.message.from_user.first_name}\n\nIm GPlink bot. Just send me link and get short link\n\n/auth to autherise me to use this bot. Your api token is safe with me I will not share it \n\nClick below button to know more\n ', reply_markup=reply_markup)
+    update.message.reply_text(f'Hi! {update.message.from_user.first_name}\n\nIm GPlink bot. Just send me valid link and get short link\n\nGet /help ', reply_markup=reply_markup)
 
 
 def help_command(update, context):
@@ -36,13 +36,13 @@ def help_command(update, context):
 def auth(update, context): 
     keyboard = [
         [
-            InlineKeyboardButton("Autherise me ", url='https://gplinks.in/member/tools/api'),
+            InlineKeyboardButton("Authorize me ", url='https://gplinks.in/member/tools/api'),
         ]
     ]
 
     reply_markup = InlineKeyboardMarkup(keyboard)
 
-    update.message.reply_text('Please login to your gplink account by pressing the button below and copy paste the api url here\n\neg: https://gplinks.in/api?api=6a4cb74d70edd86803333333333a&', reply_markup=reply_markup)
+    update.message.reply_text('Get /help before autherizing.\n\n🔑 Please login to your gplink account by pressing the button below and copy paste the api url here\n\neg: https://gplinks.in/api?api=9f37a29155bd3c1c171aaf747192be42b9cd75eb&', reply_markup=reply_markup)
     
 
 def echo(update, context):
