@@ -24,7 +24,7 @@ def start(update, context):
 
 def help_command(update, context):
     
-    update.message.reply_text('Hello, \n\n*Follow these steps:*\n\n🎈 First you have to sign up at tiny.one/GPlinks\n\n🎈 After that copy that link from GPLINK TOOLS API\n\n🎈 It will look like this 👉 https://gplinks.in/api?api=6a4cb74d70edd33a&\nsent it to me\n\n🎈 Now you are done! just sent any link to me')
+    update.message.reply_text('Hello, \n\n<b>Follow these steps:</b>\n\n🎈 First you have to sign up at tiny.one/GPlinks\n\n🎈 After that copy that link from GPLINK TOOLS API\n\n🎈 It will look like this 👉 https://gplinks.in/api?api=6a4cb74d70edd33a&\nsent it to me\n\n🎈 Now you are done! just sent any link to me')
     
 def auth(update, context): 
     keyboard = [
