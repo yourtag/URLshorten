@@ -20,7 +20,7 @@ def start(update, context):
 
     reply_markup = InlineKeyboardMarkup(keyboard)
 
-    update.message.reply_text('Hi! {firstname}\n\nIm GPlink bot. Just send me link and get short link\n\n/help for more help\n\nyou have to autherise me to use this bot use /auth\nyour api token is safe with me I will not share it \n\nany doubt ask here 👉 @Jakeedot\n\n©️ ', reply_markup=reply_markup)
+    update.message.reply_text('Hi!\n\nIm GPlink bot. Just send me link and get short link\n\n/help for more help\n\nyou have to autherise me to use this bot use /auth\nyour api token is safe with me I will not share it \n\nany doubt ask here 👉 @Jakeedot\n\n©️ ', reply_markup=reply_markup)
 
 
 def help_command(update, context):
@@ -43,13 +43,13 @@ def auth(update, context):
 def echo(update, context):
 
     if 'https://gplinks.in/api?api=' in str(update.message.text):
-        chat = str(update.message.user.first_name)
+        chat = str(update.message.chat_id)
         url = update.message.text.replace("https://gplinks.in/api?api=", "")
         token = re.sub("&.*", "", url)
         tokens[chat] = str(token)
         with open('gplink_tokens.py', 'w') as file:
             file.write('tokens = ' + str(tokens))
-            update.message.reply_text(f'🎉 Congratulations {chat}\n\nYou are registered with GPLINK API TOKEN : '{token}'\n\nIf you sent me a different API URL I will reassign your GPLINK API TOKEN')
+            update.message.reply_text(f'🎉 Congratulations {chat}\n\nYou are registered with GPLINK API TOKEN : {token}\n\nIf you sent me a different API URL I will reassign your GPLINK API TOKEN')
     elif 'https://gplinks.in/api?api=' not in str(update.message.text) and (re.search('^http://.*', str(update.message.text)) or re.search('^https://.*', str(update.message.text))):
         try:
             chat = str(update.message.chat_id)
