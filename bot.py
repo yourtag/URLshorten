@@ -64,7 +64,7 @@ def echo(update, context):
             update.message.reply_text("Your api token is missing please autherise me by /auth for using me 🤪")
 
         req = requests.get(f'https://gplinks.in/api?api={gptoken}&url={url_convert}')
-        r = json.loads(req.content)
+        r = `json.loads(req.content)`
 
         if r['status'] == 'success' :
             update.message.reply_text(' Status : ' + r['status'] + ' 👍')
