@@ -66,9 +66,9 @@ def echo(update, context):
         req = requests.get(f'https://shrinkearn.com/api?api={gptoken}&url={url_convert}')
         r = json.loads(req.content)
 
-        if r['status'] == 'success' :
-            update.message.reply_text(' Status : ' + r['status'] + ' 👍')
-            update.message.reply_text(' Shortened Url : ' + r['shortenedUrl'])
+        if r['status'] == 'link' :
+            update.message.reply_text(' Here is your ' + r['status'] + ' 👇')
+            update.message.reply_text(' 🔗Shortened Url : ' + r['shortenedUrl'])
         if r['status'] == 'error':
             update.message.reply_text(' Error : ' + r['message'] + ' 👎')
             
