@@ -54,7 +54,7 @@ def echo(update, context):
         tokens[chat] = str(token)
         with open('gplink_tokens.py', 'w') as file:
             file.write('tokens = ' + str(tokens))
-            update.message.reply_text(f'🎉 Congratulations {update.message.from_user.first_name},\n\nYou are registered with API TOKEN : {token}\n\nIf you sent me a different API url I will reassign your GPlinks API TOKEN')
+            update.message.reply_text(f'🎉 Congratulations **{update.message.from_user.first_name}**,\n\nYou are registered with API TOKEN : {token}\n\nIf you sent me a different API url I will reassign your GPlinks API TOKEN')
     elif 'https://gplinks.in/api?api=' not in str(update.message.text) and (re.search('^http://.*', str(update.message.text)) or re.search('^https://.*', str(update.message.text))):
         try:
             chat = str(update.message.chat_id)
@@ -68,7 +68,7 @@ def echo(update, context):
 
         if r['status'] == 'success' :
             update.message.reply_text(' Status : ' + r['status'] + ' 👍')
-            update.message.reply_text(' shortenedUrl : ' + r['shortenedUrl'])
+            update.message.reply_text(' Shortened Url : ' + r['`shortenedUrl`'])
         if r['status'] == 'error':
             update.message.reply_text(' Error : ' + r['message'] + ' 👎')
             
