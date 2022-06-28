@@ -14,7 +14,6 @@ def start(update, context):
     keyboard = [
        [
             InlineKeyboardButton("🧐 How to use me", url='https://telegra.ph/How-to-use-me-10-29'),
-            InlineKeyboardButton("👨 Master", url='@WhiteDevilx2000'),
        ]
     ]
 
