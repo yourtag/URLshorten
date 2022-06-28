@@ -36,7 +36,7 @@ def help_command(update, context):
 def auth(update, context): 
     keyboard = [
         [
-            InlineKeyboardButton("Authorize me ", url='https://gplinks.in/member/tools/api'),
+            InlineKeyboardButton("Log in", url='https://tiny.one/GPlinks'), InlineKeyboardButton("Authorize me ", url='https://gplinks.in/member/tools/api'),
         ]
     ]
 
