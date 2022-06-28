@@ -42,7 +42,7 @@ def auth(update, context):
 
     reply_markup = InlineKeyboardMarkup(keyboard)
 
-    update.message.reply_text('Get /help before autherizing.\n\n🔑 Please login to your gplink account by pressing the button below and copy paste the api url here\n\neg: https://gplinks.in/api?api=9f37a29155bd3c1c171aaf747192be42b9cd75eb&', reply_markup=reply_markup)
+    update.message.reply_text('Get /help before autherizing.\n\n🔑 Please login to your gplink account by pressing the button below and copy paste the API url here\n\n', reply_markup=reply_markup)
     
 
 def echo(update, context):
@@ -54,7 +54,7 @@ def echo(update, context):
         tokens[chat] = str(token)
         with open('gplink_tokens.py', 'w') as file:
             file.write('tokens = ' + str(tokens))
-            update.message.reply_text(f'🎉 Congratulations {update.message.from_user.first_name}\n\nYou are registered with API TOKEN : {token}\n\nIf you sent me a different API URL I will reassign your GPlinks API TOKEN')
+            update.message.reply_text(f'🎉 Congratulations {update.message.from_user.first_name}\n\nYou are registered with API TOKEN : {token}\n\nIf you sent me a different API url I will reassign your GPlinks API TOKEN')
     elif 'https://gplinks.in/api?api=' not in str(update.message.text) and (re.search('^http://.*', str(update.message.text)) or re.search('^https://.*', str(update.message.text))):
         try:
             chat = str(update.message.chat_id)
