@@ -19,7 +19,7 @@ def start(update, context):
 
     reply_markup = InlineKeyboardMarkup(keyboard)
 
-    update.message.reply_text('Hi!\n\nIm GPlink bot. Just send me link and get short link\n\n/auth to autherise me to use this bot. Your api token is safe with me I will not share it \n\nClick below button to know more\n ', reply_markup=reply_markup)
+    update.message.reply_text('Hi! {message.chat.first_name}\n\nIm GPlink bot. Just send me link and get short link\n\n/auth to autherise me to use this bot. Your api token is safe with me I will not share it \n\nClick below button to know more\n ', reply_markup=reply_markup)
 
 
 def help_command(update, context):
@@ -31,7 +31,7 @@ def help_command(update, context):
 
     reply_markup = InlineKeyboardMarkup(keyboard)
     
-    update.message.reply_text('Hello, \n\nFollow these steps:\n\n🎈 First you have to sign up at tiny.one/GPlinks\n\n🎈 After that copy that link from GPLINK TOOLS API\n\n🎈 It will look like this 👉 https://gplinks.in/api?api=6a4cb74d70edd33a&\nsent it to me\n\n🎈 Now you are done! just sent any link to me', reply_markup=reply_markup, disable_web_page_preview=true)
+    update.message.reply_text('Hello, \n\nFollow these steps:\n\n🎈 First you have to sign up at tiny.one/GPlinks\n\n🎈 After that copy that link from GPLINK TOOLS API\n\n🎈 It will look like this 👉 https://gplinks.in/api?api=6a4cb74d70edd33a&\nsent it to me\n\n🎈 Now you are done! just sent any link to me', reply_markup=reply_markup)
     
 def auth(update, context): 
     keyboard = [
