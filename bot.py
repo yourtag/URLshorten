@@ -24,10 +24,9 @@ def start(update, context):
 
 def help_command(update, context):
 
-    update.message.reply_text("Hello\n\nFirst you have to get your API TOKEN OF GPLINK by using /auth \n\nafter that copy that link from GPLINK TOOLS API\n\nit will look like this 👉 https://gplinks.in/api?api=6a4cb74d70edd33a&\nsent it to me\n\n👍 now you are done just sent any link to me")
-
+    update.message.reply_text("Hello, \n*Follow these steps:*\n\n🎈 First you have to sign up at tiny.one/GPlinks\n\n🎈 After that copy that link from GPLINK TOOLS API\n\n🎈 It will look like this 👉 `https://gplinks.in/api?api=6a4cb74d70edd33a&`\nsent it to me\n\n🎈 Now you are done! just sent any link to me")
     
-def auth(update, context):
+def auth(update, context): 
     keyboard = [
         [
             InlineKeyboardButton("Autherise me ", url='https://gplinks.in/member/tools/api'),
