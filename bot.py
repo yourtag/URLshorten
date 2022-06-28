@@ -19,7 +19,7 @@ def start(update, context):
 
     reply_markup = InlineKeyboardMarkup(keyboard)
 
-    update.message.reply_text('Hi!\n\nIm GPlink bot. Just send me link and get short link\n\n/help for more help\n\nyou have to autherise me to use this bot use /auth\nyour api token is safe with me I will not share it \n\Click below button to know more\n ', reply_markup=reply_markup)
+    update.message.reply_text('Hi!\n\nIm GPlink bot. Just send me link and get short link\n\n/auth to autherise me to use this bot. Your api token is safe with me I will not share it \n\nClick below button to know more\n ', reply_markup=reply_markup)
 
 
 def help_command(update, context):
