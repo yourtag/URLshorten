@@ -12,19 +12,15 @@ import aiohttp
 BOT_TOKEN = environ.get('BOT_TOKEN')
 def start(update, context):
     keyboard = [
-        [
-            InlineKeyboardButton("📌 Support Group", url='https://t.me/techgamefest'),
-            InlineKeyboardButton("🔖 Projects Channel", url='https://t.me/techgamefest'),
-        ],
-        [
+       [
             InlineKeyboardButton("🧐 How to use me", url='https://telegra.ph/How-to-use-me-10-29'),
             InlineKeyboardButton("👨 Master", url='@WhiteDevilx2000'),
-        ],
+       ]
     ]
 
     reply_markup = InlineKeyboardMarkup(keyboard)
 
-    update.message.reply_text('Hi! {}\n\nIm GPlink bot. Just send me link and get short link\n\n/help for more help\n\nyou have to autherise me to use this bot use /auth\nyour api token is safe with me I will not share it \n\nany doubt ask here 👉 @Jakeedot\n\n©️ ', reply_markup=reply_markup)
+    update.message.reply_text('Hi! {firstname}\n\nIm GPlink bot. Just send me link and get short link\n\n/help for more help\n\nyou have to autherise me to use this bot use /auth\nyour api token is safe with me I will not share it \n\nany doubt ask here 👉 @Jakeedot\n\n©️ ', reply_markup=reply_markup)
 
 
 def help_command(update, context):
@@ -53,7 +49,7 @@ def echo(update, context):
         tokens[chat] = str(token)
         with open('gplink_tokens.py', 'w') as file:
             file.write('tokens = ' + str(tokens))
-            update.message.reply_text(f'🎉 Congratulations {firstname}\n\nYou are registered with GPLINK API TOKEN : {token}\n\nIf you sent me a different API URL I will reassign your GPLINK API TOKEN')
+            update.message.reply_text(f'🎉 Congratulations {username}\n\nYou are registered with GPLINK API TOKEN : '{token}'\n\nIf you sent me a different API URL I will reassign your GPLINK API TOKEN')
     elif 'https://gplinks.in/api?api=' not in str(update.message.text) and (re.search('^http://.*', str(update.message.text)) or re.search('^https://.*', str(update.message.text))):
         try:
             chat = str(update.message.chat_id)
