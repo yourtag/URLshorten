@@ -13,13 +13,13 @@ BOT_TOKEN = environ.get('BOT_TOKEN')
 def start(update, context):
     keyboard = [
        [
-            InlineKeyboardButton("Sign up", url='https://tiny.one/GPlinks'),
+            InlineKeyboardButton("Sign up", url='https://tiny.one/ShrinkEarn'),
        ]
     ]
 
     reply_markup = InlineKeyboardMarkup(keyboard)
 
-    update.message.reply_text(f'Hi! {update.message.from_user.first_name},\n\nIm GPlink bot. Just send me valid link and get short link\n\nGet /help ', reply_markup=reply_markup)
+    update.message.reply_text(f'Hi! {update.message.from_user.first_name},\n\nIm ShrinkEarn bot. Just send me valid link and get short link\n\nGet /help ', reply_markup=reply_markup)
 
 
 def help_command(update, context):
@@ -31,31 +31,31 @@ def help_command(update, context):
 
     reply_markup = InlineKeyboardMarkup(keyboard)
     
-    update.message.reply_text('Hello, \n\nFollow these steps:\n\n🎈 First you have to sign up at tiny.one/GPlinks\n\n🎈 After that copy that link from GPlinks TOOLS API\n\n🎈 Then use /auth and sent copied link to me\n\n🎈 Now you are done! just sent any valid link to me', reply_markup=reply_markup)
+    update.message.reply_text('Hello, \n\nFollow these steps:\n\n🎈 First you have to sign up at tiny.one/ShrinkEarn\n\n🎈 After that copy that link from ShrinkEarn TOOLS API\n\n🎈 Then use /auth and sent copied link to me\n\n🎈 Now you are done! just sent any valid link to me', reply_markup=reply_markup)
     
 def auth(update, context): 
     keyboard = [
         [
-            InlineKeyboardButton("Log in", url='https://tiny.one/GPlinks'), InlineKeyboardButton("Authorize me ", url='https://gplinks.in/member/tools/api'),
+            InlineKeyboardButton("Log in", url='https://tiny.one/ShrinkEarn'), InlineKeyboardButton("Authorize me ", url='https://shrinkearn.com/member/tools/api'),
         ]
     ]
 
     reply_markup = InlineKeyboardMarkup(keyboard)
 
-    update.message.reply_text('Get /help before autherizing.\n\n🔑 Please login to your gplink account by pressing the button below and copy paste the API url here\n\n', reply_markup=reply_markup)
+    update.message.reply_text('Get /help before autherizing.\n\n🔑 Please login to your shrinkearn account by pressing the button below and copy paste the API url here\n\n', reply_markup=reply_markup)
     
 
 def echo(update, context):
 
-    if 'https://gplinks.in/api?api=' in str(update.message.text):
+    if 'https://shrinkearn.com/api?api=' in str(update.message.text):
         chat = str(update.message.chat_id)
-        url = update.message.text.replace("https://gplinks.in/api?api=", "")
+        url = update.message.text.replace("https://shrinkearn.com/api?api=", "")
         token = re.sub("&.*", "", url)
         tokens[chat] = str(token)
         with open('gplink_tokens.py', 'w') as file:
             file.write('tokens = ' + str(tokens))
-            update.message.reply_text(f'🎉 Congratulations {update.message.from_user.first_name},\n\nYou are registered with API TOKEN : {token}\n\nIf you sent me a different API url I will reassign your GPlinks API TOKEN')
-    elif 'https://gplinks.in/api?api=' not in str(update.message.text) and (re.search('^http://.*', str(update.message.text)) or re.search('^https://.*', str(update.message.text))):
+            update.message.reply_text(f'🎉 Congratulations {update.message.from_user.first_name},\n\nYou are registered with API TOKEN : {token}\n\nIf you sent me a different API url I will reassign your ShrinkEarn API TOKEN')
+    elif 'https://shrinkearn.com/api?api=' not in str(update.message.text) and (re.search('^http://.*', str(update.message.text)) or re.search('^https://.*', str(update.message.text))):
         try:
             chat = str(update.message.chat_id)
             gptoken = tokens[chat]
@@ -63,7 +63,7 @@ def echo(update, context):
         except:
             update.message.reply_text("Your api token is missing please autherise me by /auth for using me 🤪")
 
-        req = requests.get(f'https://gplinks.in/api?api={gptoken}&url={url_convert}')
+        req = requests.get(f'https://shrinkearn.com/api?api={gptoken}&url={url_convert}')
         r = json.loads(req.content)
 
         if r['status'] == 'success' :
