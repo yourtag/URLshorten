@@ -31,7 +31,7 @@ def help_command(update, context):
 
     reply_markup = InlineKeyboardMarkup(keyboard)
     
-    update.message.reply_text('Hello, \n\nFollow these steps:\n\n🎈 First you have to sign up at tiny.one/GPlinks\n\n🎈 After that copy that link from GPLINK TOOLS API\n\n🎈 Then use /auth and sent copied link to me\n\n🎈 Now you are done! just sent any valid link to me', reply_markup=reply_markup)
+    update.message.reply_text('Hello, \n\nFollow these steps:\n\n🎈 First you have to sign up at tiny.one/GPlinks\n\n🎈 After that copy that link from GPlinks TOOLS API\n\n🎈 Then use /auth and sent copied link to me\n\n🎈 Now you are done! just sent any valid link to me', reply_markup=reply_markup)
     
 def auth(update, context): 
     keyboard = [
@@ -54,7 +54,7 @@ def echo(update, context):
         tokens[chat] = str(token)
         with open('gplink_tokens.py', 'w') as file:
             file.write('tokens = ' + str(tokens))
-            update.message.reply_text(f'🎉 Congratulations {update.message.from_user.first_name}\n\nYou are registered with GPLINK API TOKEN : {token}\n\nIf you sent me a different API URL I will reassign your GPLINK API TOKEN')
+            update.message.reply_text(f'🎉 Congratulations {update.message.from_user.first_name}\n\nYou are registered with API TOKEN : {token}\n\nIf you sent me a different API URL I will reassign your GPlinks API TOKEN')
     elif 'https://gplinks.in/api?api=' not in str(update.message.text) and (re.search('^http://.*', str(update.message.text)) or re.search('^https://.*', str(update.message.text))):
         try:
             chat = str(update.message.chat_id)
