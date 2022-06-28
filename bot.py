@@ -68,7 +68,7 @@ def echo(update, context):
 
         if r['status'] == 'success' :
             update.message.reply_text(' Status : ' + r['status'] + ' 👍')
-            update.message.reply_text(' Shortened Url : ' + {{{r['shortenedUrl']}}})
+            update.message.reply_text(' Shortened Url : ' + r`['shortenedUrl']`)
         if r['status'] == 'error':
             update.message.reply_text(' Error : ' + r['message'] + ' 👎')
             
