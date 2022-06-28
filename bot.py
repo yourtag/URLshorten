@@ -31,7 +31,7 @@ def help_command(update, context):
 
     reply_markup = InlineKeyboardMarkup(keyboard)
     
-    update.message.reply_text('Hello, \n\nFollow these steps:\n\n🎈 First you have to sign up at tiny.one/GPlinks\n\n🎈 After that copy that link from GPLINK TOOLS API\n\n🎈 Sent it to me\n\n🎈 Now you are done! just sent any link to me', reply_markup=reply_markup)
+    update.message.reply_text('Hello, \n\nFollow these steps:\n\n🎈 First you have to sign up at tiny.one/GPlinks\n\n🎈 After that copy that link from GPLINK TOOLS API\n\n🎈 Then use /auth and sent copied link to me\n\n🎈 Now you are done! just sent any valid link to me', reply_markup=reply_markup)
     
 def auth(update, context): 
     keyboard = [
