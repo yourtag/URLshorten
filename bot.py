@@ -3,7 +3,7 @@ from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 import requests
 import json
 import re
-from gplink_tokens import tokens
+from link_tokens import tokens
 from os import environ
 import aiohttp
 
@@ -45,7 +45,7 @@ def echo(update, context):
         url = update.message.text.replace("https://shrinkearn.com/api?api=", "")
         token = re.sub("&.*", "", url)
         tokens[chat] = str(token)
-        with open('gplink_tokens.py', 'w') as file:
+        with open('link_tokens.py', 'w') as file:
             file.write('tokens = ' + str(tokens))
             update.message.reply_text(f'🎉 Congratulations {update.message.from_user.first_name},\n\nYou are registered with API TOKEN : {token}\n\nIf you sent me a different API url I will reassign your ShrinkEarn API TOKEN')
     elif 'https://shrinkearn.com/api?api=' not in str(update.message.text) and (re.search('^http://.*', str(update.message.text)) or re.search('^https://.*', str(update.message.text))):
