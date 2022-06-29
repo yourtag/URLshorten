@@ -25,13 +25,13 @@ def start(update, context):
 def help_command(update, context):
     keyboard = [
        [
-            InlineKeyboardButton("How to use me", url='https://telegra.ph/How-to-use-me-10-29'),
+            InlineKeyboardButton("Sign up", url='https://tiny.one/ShrinkEarn), InlineKeyboardButton("How to use me", url='https://telegra.ph/How-to-use-me-10-29'),
        ]
     ]
 
     reply_markup = InlineKeyboardMarkup(keyboard)
     
-    update.message.reply_text('Hello, \n\nFollow these steps:\n\n🎈 First you have to sign up at tiny.one/ShrinkEarn\n\n🎈 After that copy that link from ShrinkEarn TOOLS API\n\n🎈 Then use /auth and sent copied link to me\n\n🎈 Now you are done! just sent any valid link to me', reply_markup=reply_markup)
+    update.message.reply_text('Hello, \n\nFollow these steps:\n\n🎈 First you have to sign up at ShrinkEarn\n\n🎈 After that copy that link from ShrinkEarn TOOLS API\n\n🎈 Then use /auth and sent copied link to me\n\n🎈 Now you are done! just sent any valid link to me', reply_markup=reply_markup)
     
 def auth(update, context): 
     keyboard = [
