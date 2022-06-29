@@ -1,7 +1,7 @@
 # URLShortener_Telegram_Bot
 
 ## Deploying
-Required variable:
+Required variable:\n
 `BOT_TOKEN:`
 
 ### Deploy on [Heroku](https://heroku.com)
