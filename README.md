@@ -1,4 +1,4 @@
-# GPLink_Telegram_Bot
+# URLLink_Telegram_Bot
 
 ## Deploying
 
