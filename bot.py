@@ -18,7 +18,7 @@ def start(update, context):
 def help_command(update, context):
     keyboard = [
        [
-            InlineKeyboardButton("Sign up", url='https://tiny.one/ShrinkEarn'), InlineKeyboardButton("How to use me", url='https://telegra.ph/How-to-use-me-10-29'),
+            InlineKeyboardButton("Sign up", url='https://tiny.one/ShrinkEarn'), InlineKeyboardButton("How to use me", url='https://telegra.ph/How-to-use-ShrinkURLRobot-06-29'),
        ]
     ]
 
