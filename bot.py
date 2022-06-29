@@ -11,15 +11,8 @@ import aiohttp
 
 BOT_TOKEN = environ.get('BOT_TOKEN')
 def start(update, context):
-    keyboard = [
-       [
-            InlineKeyboardButton("Sign up", url='https://tiny.one/ShrinkEarn'),
-       ]
-    ]
 
-    reply_markup = InlineKeyboardMarkup(keyboard)
-
-    update.message.reply_text(f'Hi! {update.message.from_user.first_name},\n\nIm ShrinkEarn bot. Just send me valid link and get short link\n\nGet /help ', reply_markup=reply_markup)
+    update.message.reply_text(f'Hi! {update.message.from_user.first_name},\n\nIm ShrinkEarn bot. Just send me valid link and get short link.\n\nGet /help ')
 
 
 def help_command(update, context):
@@ -42,7 +35,7 @@ def auth(update, context):
 
     reply_markup = InlineKeyboardMarkup(keyboard)
 
-    update.message.reply_text('Get /help before autherizing.\n\n🔑 Please login to your shrinkearn account by pressing the button below and copy paste the API url here\n\n', reply_markup=reply_markup)
+    update.message.reply_text('Get /help if you want.\n\n🔑 Please login to your shrinkearn account by pressing the button below and copy paste the API url here\n\n', reply_markup=reply_markup)
     
 
 def echo(update, context):
