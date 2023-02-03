@@ -1,6 +1,6 @@
 # import pyshorteners
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
-from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
+from telegram.ext import Updater, CommandHandler, MessageHandler, filters
 from telegram.utils.helpers import escape_markdown
 import requests
 import json
