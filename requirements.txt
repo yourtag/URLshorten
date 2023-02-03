@@ -1,4 +1,4 @@
-python-telegram-bot
+aiogram
 urllib3
 requests
 aiohttp
