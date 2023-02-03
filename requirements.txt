@@ -1,5 +1,4 @@
-python-telegram-bot
-aiogram
+python-telegram-bot==20.0
 urllib3
 requests
 aiohttp
