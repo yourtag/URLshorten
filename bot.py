@@ -69,7 +69,7 @@ def echo(update, context):
 def unknown(update, context):
     context.bot.send_message(chat_id=update.effective_chat.id, text="Please dont spam here")
 
-unknown_handler = MessageHandler(Filters.command, unknown)          
+unknown_handler = MessageHandler(filters.command, unknown)          
 
 
 def main():
