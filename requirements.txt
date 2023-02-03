@@ -1,4 +1,4 @@
-python-telegram-bot
+python-telegram-bot --upgrade
 urllib3
 requests
 aiohttp
