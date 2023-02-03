@@ -2,4 +2,3 @@ python-telegram-bot
 urllib3
 requests
 aiohttp
-tgcrypto
