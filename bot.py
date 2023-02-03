@@ -75,7 +75,7 @@ def echo(update, context):
             
 def main():
     updater = Updater(
-        BOT_TOKEN, update_queue=True)
+        BOT_TOKEN, use_context=True)
 
     dp = updater.dispatcher
 
